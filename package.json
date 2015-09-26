@@ -1,0 +1,23 @@
+{
+  "name": "survivejs-kanban_app",
+  "version": "0.0.1",
+  "description": "SurviveJS - Webpack and React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pzi/survivejs-kanban_app.git"
+  },
+  "author": "Patrik Affentranger",
+  "license": "WTFPL",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/pzi/survivejs-kanban_app/issues"
+  },
+  "homepage": "https://github.com/pzi/survivejs-kanban_app#readme",
+  "devDependencies": {
+    "webpack": "^1.12.2"
+  }
+}
