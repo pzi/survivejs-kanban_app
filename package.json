@@ -23,6 +23,7 @@
     "html-webpack-plugin": "^1.6.1",
     "style-loader": "^0.12.4",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.0"
+    "webpack-dev-server": "^1.12.0",
+    "webpack-merge": "^0.2.0"
   }
 }
