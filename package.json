@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/pzi/survivejs-kanban_app#readme",
   "devDependencies": {
+    "css-loader": "^0.19.0",
     "html-webpack-plugin": "^1.6.1",
+    "style-loader": "^0.12.4",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.0"
   }
