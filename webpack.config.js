@@ -12,6 +12,9 @@ var common = {
     path: path.resolve(ROOT_PATH, 'build'),
     filename: 'bundle.js'
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   module: {
     loaders: [
       {
@@ -37,6 +40,15 @@ if(TARGET === 'start' || !TARGET) {
       inline: true,
       port: 8080,
       progress: true
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.jsx?$/,
+          loaders: ['babel'],
+          include: path.resolve(ROOT_PATH, 'app')
+        }
+      ]
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
