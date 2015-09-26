@@ -4,7 +4,8 @@
   "description": "SurviveJS - Webpack and React",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/pzi/survivejs-kanban_app#readme",
   "devDependencies": {
     "html-webpack-plugin": "^1.6.1",
-    "webpack": "^1.12.2"
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.0"
   }
 }
