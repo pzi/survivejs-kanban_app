@@ -5,22 +5,24 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var TARGET = process.env.npm_lifecycle_event;
 var ROOT_PATH = path.resolve(__dirname);
+var APP_ROOT = path.resolve(ROOT_PATH, 'app');
 
 var common = {
-  entry: path.resolve(ROOT_PATH, 'app'),
+  entry: APP_ROOT,
   output: {
     path: path.resolve(ROOT_PATH, 'build'),
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
+    root: [ APP_ROOT ]
   },
   module: {
     loaders: [
       {
         test: /\.css$/,
         loaders: ['style', 'css'],
-        include: path.resolve(ROOT_PATH, 'app')
+        include: APP_ROOT
       }
     ]
   },
@@ -46,7 +48,7 @@ if(TARGET === 'start' || !TARGET) {
         {
           test: /\.jsx?$/,
           loaders: ['babel'],
-          include: path.resolve(ROOT_PATH, 'app')
+          include: APP_ROOT
         }
       ]
     },
