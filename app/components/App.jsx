@@ -1,3 +1,4 @@
+import 'array.prototype.findindex';
 import uuid from 'node-uuid';
 import React from 'react';
 import Notes from 'components/Notes.jsx';
@@ -22,6 +23,7 @@ export default class App extends React.Component {
       ]
     };
     this.addNote = this.addNote.bind(this);
+    this.editNote = this.editNote.bind(this);
   }
 
   addNote() {
@@ -34,7 +36,26 @@ export default class App extends React.Component {
   }
 
   editNote(noteId, task) {
-    console.log('note edited:', noteId, task);
+    let notes = this.state.notes;
+    const noteIndex = this.findNoteIndex(noteId);
+
+    if (noteIndex < 0) {
+      return;
+    }
+
+    notes[noteIndex].task = task;
+
+    this.setState({notes});
+  }
+
+  findNoteIndex(noteId) {
+    const notes = this.state.notes;
+    const noteIndex = notes.findIndex((note) => note.id === noteId );
+
+    if (noteIndex < 0) {
+      console.warn('Failed to find note', notes, noteId);
+    }
+    return noteIndex;
   }
 
   render() {
