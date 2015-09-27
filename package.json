@@ -27,5 +27,8 @@
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.0",
     "webpack-merge": "^0.2.0"
+  },
+  "dependencies": {
+    "react": "^0.13.3"
   }
 }
