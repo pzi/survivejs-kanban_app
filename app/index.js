@@ -1,7 +1,8 @@
-require('./main.css');
+import 'main.css';
 
-var component = require('./component');
-var app = document.createElement('div');
+import component from 'component';
+
+const app = document.createElement('div');
 
 document.body.appendChild(app);
 
