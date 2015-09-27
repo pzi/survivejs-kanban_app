@@ -9,11 +9,12 @@ export default class Notes extends React.Component {
   }
 
   renderNote(note) {
+    const {onEdit, onDelete} = this.props;
     return (
       <li className='note' key={`note${note.id}`}>
         <Note task={note.task}
-          onEdit={this.props.onEdit.bind(null, note.id)}
-          onDelete={this.props.onDelete.bind(null, note.id)} />
+          onEdit={onEdit.bind(null, note.id)}
+          onDelete={onDelete.bind(null, note.id)} />
       </li>
     );
   }
