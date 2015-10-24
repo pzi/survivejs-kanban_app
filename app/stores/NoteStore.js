@@ -19,7 +19,7 @@ class NoteStore {
   }
 
   update({id, task}) {
-    let notes = this.notes;
+    const notes = this.notes;
     const noteIndex = this.findNote(id);
 
     if (noteIndex < 0) {
@@ -41,6 +41,9 @@ class NoteStore {
 
     const leftOfDeleted = notes.slice(0, noteIndex);
     const rightOfDeleted = notes.slice(noteIndex + 1);
+
+    // NOTE: Could also use `Array.prototype.splice()`
+    // ie. notes.splice(noteIndex, 1);
 
     this.setState({
       notes: leftOfDeleted.concat(rightOfDeleted)
