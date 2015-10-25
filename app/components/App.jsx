@@ -3,9 +3,17 @@ import Notes from 'components/Notes';
 import NoteActions from 'actions/NoteActions';
 import NoteStore from 'stores/NoteStore';
 import connect from '../decorators/connect';
+import connectToStores from 'alt/utils/connectToStores';
 
-@connect(NoteStore)
+@connectToStores
 export default class App extends React.Component {
+  static getStores(props) {
+    return [NoteStore];
+  }
+  static getPropsFromStores(props) {
+    return NoteStore.getState();
+  }
+
   addNote() {
     NoteActions.create({task: 'New task'});
   }
