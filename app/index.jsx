@@ -3,6 +3,7 @@ import 'main.css';
 import component from 'component.js';
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 import App from './components/App.jsx';
 
 import alt from './utils/alt';
@@ -21,5 +22,5 @@ function main() {
 
   document.body.appendChild(app);
 
-  React.render(<App />, app);
+  ReactDOM.render(<App />, app);
 }
