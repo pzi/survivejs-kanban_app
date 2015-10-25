@@ -6,6 +6,7 @@ import NoteActions from 'actions/NoteActions';
 class NoteStore {
   constructor() {
     this.bindActions(NoteActions);
+    this.dispatcher.register(console.log.bind(console));
 
     this.notes = [];
   }
